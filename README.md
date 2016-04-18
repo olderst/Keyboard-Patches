@@ -4,13 +4,12 @@ This set of patches can be used in MaciASL to apply some common patches to your 
 Works with ASUS, Lenovo, Acer. Will be update with new models and modifications
 
 To add these patches to MaciASL as a repository:
-
-Run MaciASL
-choose Preferences from the MaciASL menu bar
-select Sources
-click the [+] button
-give it a name (eg. "Laptop Patches")
-type the following URL:https://github.com/olderst/Keyboard-Patches/master
+- Run MaciASL
+- Choose Preferences from the MaciASL menu bar
+- Select Sources
+- Click the [+] button
+- Give it a name (eg. "Laptop Patches")
+- Type the following URL:https://github.com/olderst/Keyboard-Patches/master
 
 #MaciASL and iasl
 I recommend you use this version of MaciASL:
