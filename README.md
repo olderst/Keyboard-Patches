@@ -9,7 +9,7 @@ To add these patches to MaciASL as a repository:
 - Select Sources
 - Click the [+] button
 - Give it a name (eg. "Keyboard Patches")
-- Type the following URL: https://raw.github.com/Olderst/Keyboard-Patches/master
+- Type the following URL: http://raw.github.com/olderst/Keyboard-Patches/master
 
 ###MaciASL and iasl
 I recommend you use this version of MaciASL:
