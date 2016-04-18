@@ -8,7 +8,7 @@ To add these patches to MaciASL as a repository:
 - Choose Preferences from the MaciASL menu bar
 - Select Sources
 - Click the [+] button
-- Give it a name (eg. "Laptop Patches")
+- Give it a name (eg. "Keyboard Patches")
 - Type the following URL: https://github.com/olderst/Keyboard-Patches/master
 
 ###MaciASL and iasl
