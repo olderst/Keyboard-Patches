@@ -7,7 +7,6 @@
 #  ELAN
 #  Synaptic
 
-
 into method label _Q0E replace_content
 begin
 // Brightness Down\n
