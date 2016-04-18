@@ -1,0 +1,7 @@
+[ACPI] --> ACPIKeyboard	NullPatch.txt
+[acpi] ASUS Brightness Patch	ACPIKeyboard/ASUS_Brightness_Patch.txt
+[acpi] ASUS Volume Patch	ACPIKeyboard/ASUS_Volume_Patch.txt
+[acpi] Acer Brightness Patch	ACPIKeyboard/Acer_Brightness_Patch.txt
+[acpi] Lenovo Brightness Patch	ACPIKeyboard/Lenovo_Brightness_Patch.txt
+[FnKeys] --> AsusNBFnKeys	NullPatch.txt
+[fnkeys] ASUS Brigtness Patch	AsusNBFnKeys/ASUS_ATKD_Brightness_Patch.txt
