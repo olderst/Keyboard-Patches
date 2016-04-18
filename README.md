@@ -27,6 +27,6 @@ For detailed information on ACPI patching, read here:
 
 http://osxpc.ru/faq/acpi-manual/
 
-or here:
+Or here:
 
 http://www.tonymacx86.com/el-capitan-laptop-support/152573-guide-patching-laptop-dsdt-ssdts.html
