@@ -1,7 +1,7 @@
 ## Olderst's laptop patch repository
 This set of patches can be used in MaciASL to apply some common patches to your laptop for geting full-working function keys on OS X.
 
-Works with ####ASUS, ####Lenovo, ####Acer. Will be update with new models and modifications
+Works with ASUS, Lenovo, Acer. Will be update with new models and modifications
 
 To add these patches to MaciASL as a repository:
 - Run MaciASL
