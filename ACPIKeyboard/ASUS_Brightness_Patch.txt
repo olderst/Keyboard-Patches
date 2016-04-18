@@ -1,6 +1,7 @@
 #Maintained by: Rehabman for: ACPIKeyboard Automatic Pathes
 
 #ASUS Brightness Patch.txt
+
 # created by Olderst
 
 # works for:
