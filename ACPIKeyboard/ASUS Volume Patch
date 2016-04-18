@@ -1,0 +1,30 @@
+#Maintained by: Rehabman for: ACPIKeyboard Automatic Pathes
+
+#ASUS Volume Patch.txt
+
+# created by Olderst
+
+# works for:
+#  ELAN
+#  Synaptic
+
+into method label _Q13 replace_content
+begin
+// Volume Mute\n
+Notify(\RMKB, 0x214a)\n
+Notify(\RMKB, 0x224a)\n
+end;
+
+into method label _Q14 replace_content
+begin
+// Volume Down\n
+Notify(\RMKB, 0x2149)\n
+Notify(\RMKB, 0x2249)\n
+end;
+
+into method label _Q15 replace_content
+begin
+// VolumeUp\n
+Notify(\RMKB, 0x2148)\n
+Notify(\RMKB, 0x2248)\n
+end;
