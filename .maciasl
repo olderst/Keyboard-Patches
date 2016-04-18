@@ -1,7 +1,7 @@
 [syn] --> ACPIKeyboard	NullPatch.txt
-[syn] ASUS Brightness Patch	ACPIKeyboard/Acer Brightness Patch.txt
-[syn] ASUS Brightness Patch	ACPIKeyboard/Lenonvo Brightness Patch
+[syn] Acer Brightness Patch	ACPIKeyboard/Acer Brightness Patch.txt
+[syn] Lenovo Brightness Patch	ACPIKeyboard/Lenonvo Brightness Patch
 [syn] ASUS Brightness Patch	ACPIKeyboard/ASUS Brightness Patch.txt
-[syn] ASUS Brightness Patch	ACPIKeyboard/ASUS Volume Patch.txt
+[syn] ASUS Volume Patch	ACPIKeyboard/ASUS Volume Patch.txt
 [syn] --> AsusNBFnKeys	NullPatch.txt
 [syn] ASUS ATKD Brightness Patch/ASUS ATKD Brightness Patch.txt
