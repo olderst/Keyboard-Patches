@@ -1,4 +1,4 @@
-#Maintained by: Rehabman for: ACPIKeyboard Automatic Pathes
+#Maintained by: Olderst for: ACPIKeyboard Automatic Pathes
 
 #Add RMKB0000 Device to DSDT.txt
 
