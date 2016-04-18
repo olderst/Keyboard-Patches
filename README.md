@@ -21,7 +21,7 @@ And Rehabman's version of iasl:
 
 https://github.com/RehabMan/Intel-iasl
 
-ACPI patching guide
+#ACPI patching guide
 
 For detailed information on ACPI patching, read here:
 
