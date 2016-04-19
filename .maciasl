@@ -7,6 +7,7 @@
 [acpi] Acer 47xx/57xx Brightness Patch	ACPIKeyboard/Acer_57xx_Brightness_Patch.txt
 [acpi] Lenovo Brightness Patch	ACPIKeyboard/Lenovo_Brightness_Patch.txt
 [acpi] Enable ACPIKeyboard	ACPIKeyboard/Add_RMKB0000.txt
+[acpi] Samsung RV520 Brightness Patch	ACPIKeyboard/Samsung_RV520_Brightness_Patch.txt
 [FnKeys] --> AsusNBFnKeys	NullPatch.txt
 [FnKeys] ASUS K5x Brightness Patch	AsusNBFnKeys/ASUS_K55_ATKD_Brightness_Patch.txt
 [FnKeys] ASUS K75 Brightness Patch	AsusNBFnKeys/ASUS_K75_ATKD_Brightness_Patch.txt
