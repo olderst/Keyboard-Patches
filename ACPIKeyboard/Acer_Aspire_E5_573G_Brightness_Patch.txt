@@ -1,6 +1,6 @@
 #Maintained by: Rehabman for: ACPIKeyboard Automatic Pathes
 
-#Acer Brightness Patch.txt
+#Acer Aspire E5-573G Brightness Patch.txt
 
 # created by Olderst
 
@@ -8,14 +8,14 @@
 #  ELAN
 #  Synaptic
 
-into method label _Q8E replace_content
+into method label _Q8F replace_content
 begin
 // Brightness Down\n
 Notify(\RMKB, 0x2191)\n
 Notify(\RMKB, 0x2291)\n
 end;
 
-into method label _Q8F replace_content
+into method label _Q8E replace_content
 begin
 // Brightness Up\n
 Notify(\RMKB, 0x2190)\n
