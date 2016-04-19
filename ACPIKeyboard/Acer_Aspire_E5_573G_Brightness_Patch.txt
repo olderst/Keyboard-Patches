@@ -8,7 +8,7 @@
 # (AddPNLF in Clover or added PNLF device into DSDT)
 
 # Supported models: Acer Aspire E5-573G
-                Sony Vaio SVF1521
+                    Sony Vaio SVF1521
 
 # works with:
 #  ELAN
