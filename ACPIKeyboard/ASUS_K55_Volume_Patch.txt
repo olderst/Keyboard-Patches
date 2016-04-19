@@ -4,7 +4,7 @@
 
 # created by Olderst
 
-#Support models: ASUS K53/K55-series
+#Support models: ASUS K53/K54/K55-series
                  ASUS K550-series
 
 # works with:
