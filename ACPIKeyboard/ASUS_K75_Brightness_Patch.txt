@@ -4,7 +4,7 @@
 
 # created by Olderst
 
-#Support models: ASUS K75-Series
+#Support models: ASUS K75-series
 
 # works with:
 #  ELAN
