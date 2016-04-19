@@ -4,6 +4,9 @@
 
 # created by Olderst
 
+# !Works only with already worked system brightness contorl 
+# (AddPNLF in Clover or added PNLF device into DSDT)
+
 #Support models: ASUS K75-series
 
 # works with:
