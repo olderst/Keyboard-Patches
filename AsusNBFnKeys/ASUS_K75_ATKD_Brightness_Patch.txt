@@ -7,7 +7,7 @@
 # !Works only with already worked system brightness contorl 
 # (AddPNLF in Clover or added PNLF device into DSDT)
 
-#Supported models: ASUS K75-series
+# Supported models: ASUS K75-series
 
 # works with:
 #  ELAN
