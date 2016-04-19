@@ -1,0 +1,32 @@
+#Maintained by: Rehabman for: ACPIKeyboard Automatic Pathes
+
+#ASUS K75 ATKD Brightness Patch.txt
+
+# created by Olderst
+
+# !Works only with already worked system brightness contorl 
+# (AddPNLF in Clover or added PNLF device into DSDT)
+
+#Support models: ASUS K75-series
+
+# works with:
+#  ELAN
+#  Synaptic (?)
+
+into method label _Q11 replace_content
+begin
+// Brightness Down\n
+If (ATKP)\n
+{\n
+\_SB.ATKD.IANE (0x20)\n
+}\n
+end;
+
+into method label _Q12 replace_content 
+begin
+// Brightness Up\n
+If (ATKP)\n
+{\n
+\_SB.ATKD.IANE (0x10)\n
+}\n
+end;
