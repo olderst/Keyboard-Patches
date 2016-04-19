@@ -1,0 +1,32 @@
+#Maintained by: Rehabman for: ACPIKeyboard Automatic Pathes
+
+#ASUS K75 Volume Patch.txt
+
+# created by Olderst
+
+#Support models: ASUS K75-series
+
+# works with:
+#  ELAN
+#  Synaptic
+
+into method label _Q20 replace_content
+begin
+// Volume Mute\n
+Notify(\RMKB, 0x214a)\n
+Notify(\RMKB, 0x224a)\n
+end;
+
+into method label _Q21 replace_content
+begin
+// Volume Down\n
+Notify(\RMKB, 0x2149)\n
+Notify(\RMKB, 0x2249)\n
+end;
+
+into method label _Q24 replace_content
+begin
+// VolumeUp\n
+Notify(\RMKB, 0x2148)\n
+Notify(\RMKB, 0x2248)\n
+end;
