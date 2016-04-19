@@ -7,7 +7,7 @@
 # !Works only with already worked system brightness contorl 
 # (AddPNLF in Clover or added PNLF device into DSDT)
 
-#Support models: ASUS K53/K54/K55-series
+#Supported models: ASUS K53/K54/K55-series
                  ASUS K550-series
 # works with:
 #  ELAN
