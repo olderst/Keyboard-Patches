@@ -2,9 +2,12 @@
 
 #Acer 57xx Brightness Patch.txt
 
+# !Works only with already worked system brightness contorl 
+# (AddPNLF in Clover or added PNLF device into DSDT)
+
 # created by Olderst
 
-# works for:
+# works with:
 #  ELAN
 #  Synaptic
 
