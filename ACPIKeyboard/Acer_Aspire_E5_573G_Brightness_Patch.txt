@@ -4,7 +4,10 @@
 
 # created by Olderst
 
-# works for:
+# !Works only with already worked system brightness contorl 
+# (AddPNLF in Clover or added PNLF device into DSDT)
+
+# works with:
 #  ELAN
 #  Synaptic
 
