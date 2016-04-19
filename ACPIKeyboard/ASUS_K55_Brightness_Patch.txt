@@ -4,7 +4,7 @@
 
 # created by Olderst
 
-# !Works only with already work system brightness contorl 
+# !Works only with already worked system brightness contorl 
 # (AddPNLF in Clover or added PNLF device into DSDT)
 
 #Support models: ASUS K53/K55-series
