@@ -4,7 +4,10 @@
 
 # created by Olderst
 
-# works for:
+#Support models: ASUS K53/K55-series
+                 ASUS K550-series
+
+# works with:
 #  ELAN
 #  Synaptic
 
