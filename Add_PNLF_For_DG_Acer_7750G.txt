@@ -14,6 +14,10 @@
 # Based on information from the normal laptop DSDT methods,
 # optimized for use with ACPIBacklight.kext
 
+# Rename GFX0 to IGPU for right method patching;
+into_all all code_regex IGPU, replaceall_matched begin IGFX, end;
+
+# Add PNLF device
 into_all device label PNLF remove_entry;
 into device label PEGP set_label begin GFX0, end;
 into device label GFX0 replace_content
