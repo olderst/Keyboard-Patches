@@ -1,0 +1,351 @@
+# Maintained by: Olderst for: Brightness Patches
+# Add_PNLF_For_DG_Acer_7750G.txt
+# 
+# Created by Den Skop 
+# Design by Olderst
+#
+# This patch enables the brightness slider in SysPrefs->Displays
+# and will also enable activation of sleep mode by closing
+# the laptop lid.
+#
+# This patch works well for laptops that have working
+# Radeon/nVidia Discrete Graphics.
+#
+# Based on information from the normal laptop DSDT methods,
+# optimized for use with ACPIBacklight.kext
+
+into_all device label PNLF remove_entry;
+into device label PEGP set_label begin GFX0, end;
+into device label GFX0 replace_content
+begin
+                Name (_ADR, Zero)  // _ADR: Address/n
+                OperationRegion (PCIS, PCI_Config, Zero, 0x04)/n
+                Field (PCIS, ByteAcc, NoLock, Preserve)/n
+                {/n
+                    DVID,   16/n
+                }/n
+
+                Method (_DOD, 0, NotSerialized)  // _DOD: Display Output Devices/n
+                {/n
+                    Name (DTMX, Package (0x03)/n
+                    {/n
+                        0x0110, /n
+                        0x80000100, /n
+                        0x80007330/n
+                    })/n
+                    Return (DTMX)/n
+                }/n
+
+                Method (_DOS, 1, NotSerialized)  // _DOS: Disable Output Switching/n
+                {/n
+                }/n
+
+                Device (DD01)/n
+                {/n
+                    Method (_ADR, 0, Serialized)  // _ADR: Address/n
+                    {/n
+                        Return (0x0110)/n
+                    }/n
+
+                    Method (_DCS, 0, NotSerialized)  // _DCS: Display Current Status/n
+                    {/n
+                        Return (0x1F)/n
+                    }/n
+
+                    Method (_DGS, 0, NotSerialized)  // _DGS: Display Graphics State/n
+                    {/n
+                        Return (One)/n
+                    }/n
+
+                    Method (_DSS, 1, NotSerialized)  // _DSS: Device Set State/n
+                    {/n
+                    }/n
+
+                    Method (_BCL, 0, Serialized)  // _BCL: Brightness Control Levels/n
+                    {/n
+                        Return (Package (0x0C)/n
+                        {/n
+                            0x64, /n
+                            0x32, /n
+                            0x0A, /n
+                            0x14, /n
+                            0x1E, /n
+                            0x28, /n
+                            0x32, /n
+                            0x3C, /n
+                            0x46, /n
+                            0x50, /n
+                            0x5A, /n
+                            0x64  /n
+                        })/n
+                    }/n
+
+                    Method (_BQC, 0, NotSerialized)  // _BQC: Brightness Query Current/n
+                    {/n
+                        Store (^^^^LPCB.EC0.BRTS, Local0)/n
+                        Increment (Local0)/n
+                        Multiply (Local0, 0x0A, Local0)/n
+                        Return (Local0)/n
+                    }/n
+
+                    Method (_BCM, 1, Serialized)  // _BCM: Brightness Control Method/n
+                    {/n
+                        If (LAnd (LGreaterEqual (Arg0, 0x0A), LLessEqual (Arg0, 0x64)))/n
+                        {/n
+                            Divide (Arg0, 0x0A, Local0, Arg0)/n
+                            Decrement (Arg0)/n
+                            Sleep (0x64)/n
+                            Store (Arg0, ^^^^LPCB.EC0.BRTS/n)
+                        }/n
+                    }/n
+                }/n
+
+                Device (DD02)/n
+                {/n
+                    Method (_ADR, 0, Serialized)  // _ADR: Address/n
+                    {/n
+                        Return (0x80000100)/n
+                    }/n
+
+                    Method (_DOS, 1, NotSerialized)  // _DOS: Disable Output Switching/n
+                    {/n
+                    }/n
+
+                    Method (_DCS, 0, NotSerialized)  // _DCS: Display Current Status/n
+                    {/n
+                        Return (0x1F)/n
+                    }/n
+
+                    Method (_DGS, 0, NotSerialized)  // _DGS: Display Graphics State/n
+                    {/n
+                        Return (One)/n
+                    }/n
+
+                    Method (_DSS, 1, NotSerialized)  // _DSS: Device Set State/n
+                    {/n
+                    }/n
+                }/n
+
+                Device (DD03)/n
+                {/n
+                    Method (_ADR, 0, Serialized)  // _ADR: Address/n
+                    {/n
+                        Return (0x80007330)/n
+                    }/n
+
+                    Method (_DOS, 1, NotSerialized)  // _DOS: Disable Output Switching/n
+                    {/n
+                    }/n
+
+                    Method (_DCS, 0, NotSerialized)  // _DCS: Display Current Status/n
+                    {/n
+                        Return (0x1F)/n
+                    }/n
+
+                    Method (_DGS, 0, NotSerialized)  // _DGS: Display Graphics State/n
+                    {/n
+                        Return (One)/n
+                    }/n
+
+                    Method (_DSS, 1, NotSerialized)  // _DSS: Device Set State/n
+                    {/n
+                    }/n
+                }/n
+
+                Device (PNLF)/n
+                {/n
+                    Name (_ADR, Zero)  // _ADR: Address/n
+                    Name (_HID, EisaId ("APP0002"))  // _HID: Hardware ID/n
+                    Name (_CID, "backlight")  // _CID: Compatible ID/n
+                    Name (_UID, 0x0A)  // _UID: Unique ID/n
+                    Name (_STA, 0x0B)  // _STA: Status/n
+                    Method (_BCM, 1, NotSerialized)  // _BCM: Brightness Control Method/n
+                    {/n
+                        ^^DD01._BCM (Arg0)/n
+                    })/n
+                    Method (_BQC, 0, NotSerialized)  // _BQC: Brightness Query Current/n
+                    {/n
+                        Return (^^DD01._BQC ())/n
+                    }/n
+
+                    Method (_BCL, 0, NotSerialized)  // _BCL: Brightness Control Levels/n
+                    {/n
+                        Return (^^DD01._BCL ())/n
+                    }/n
+
+                    Method (_DOS, 1, NotSerialized)  // _DOS: Disable Output Switching/n
+                    {/n
+                        ^^_DOS (Arg0)/n
+                    }/n
+                }/n
+
+                Name (DSWR, Zero)/n
+                Name (NXTD, Zero)/n
+                Name (INDX, Zero)/n
+                Name (SACC, Buffer (0x03)/n
+                {/n
+                     0x01, 0x02, 0x03  /n                          
+                })/n
+                Name (SACH, Buffer (0x03)/n
+                {/n
+                     0x01, 0x08, 0x09  /n                             
+                })/n
+                Name (SACT, Buffer (0x05)/n
+                {/n
+                     0x01, 0x02, 0x08, 0x03, 0x09  /n                 
+                })/n
+                Method (ATIF, 2, Serialized)/n
+                {/n
+                    If (LEqual (Arg0, Zero))/n
+                    {/n
+                        Name (TMP0, Buffer (0x0100)/n
+                        {/n
+                             0x00           /n                                
+                        })/n
+                        CreateWordField (TMP0, Zero, F0SS)/n
+                        CreateWordField (TMP0, 0x02, F0IV)/n
+                        CreateDWordField (TMP0, 0x04, F0SN)/n
+                        CreateDWordField (TMP0, 0x08, F0SF)/n
+                        Store (0x0C, F0SS)/n
+                        Store (One, F0IV)/n
+                        Store (0x51, F0SN)/n
+                        Store (0x07, F0SF)/n
+                        Return (TMP0)/n
+                    }/n
+
+                    If (LEqual (Arg0, One))/n
+                    {/n
+                        Name (TMP1, Buffer (0x0100)/n
+                        {/n
+                             0x00               /n                            
+                        })/n
+                        CreateWordField (TMP1, Zero, F1SS)/n
+                        CreateDWordField (TMP1, 0x02, F1VF)/n
+                        CreateDWordField (TMP1, 0x06, F1FG)/n
+                        Store (0x0A, F1SS)/n
+                        Store (0x03, F1VF)/n
+                        Store (One, F1FG)/n
+                        Return (TMP1)/n
+                    }/n
+
+                    If (LEqual (Arg0, 0x02))/n
+                    {/n
+                        Name (TMP2, Buffer (0x0100)/n
+                        {/n
+                             0x00                  /n                         
+                        })/n
+                        CreateWordField (TMP2, Zero, F2SS)/n
+                        CreateDWordField (TMP2, 0x02, F2PR)/n
+                        CreateByteField (TMP2, 0x06, F2EM)/n
+                        CreateByteField (TMP2, 0x07, F2TG)/n
+                        CreateByteField (TMP2, 0x08, F2SI)/n
+                        CreateByteField (TMP2, 0x09, F2FG)/n
+                        CreateByteField (TMP2, 0x0A, F2FI)/n
+                        CreateByteField (TMP2, 0x0B, F2SP)/n
+                        Store (0x0A, F2SS)/n
+                        Name (STS2, Zero)/n
+                        Or (DSWR, STS2, STS2)/n
+                        Store (STS2, F2PR)/n
+                        Store (Zero, DSWR)/n
+                        Return (TMP2)/n
+                    }/n
+
+                    If (LEqual (Arg0, 0x03))/n
+                    {/n
+                        Name (TMP3, Buffer (0x0100)/n
+                        {/n
+                             0x00                     /n                      
+                        })
+                        CreateWordField (TMP3, Zero, F3SS)/n
+                        CreateWordField (TMP3, 0x02, F3SD)/n
+                        CreateWordField (Arg1, Zero, AI3S)/n
+                        CreateWordField (Arg1, 0x02, SLDS)/n
+                        CreateWordField (Arg1, 0x04, CODS)/n
+                        Store (SLDS, Local1)/n
+                        And (Local1, 0x0B, Local1)/n
+                        Store (CODS, Local2)/n
+                        Or (Local2, One, Local2)/n
+                        Store (Zero, Local0)/n
+                        Store (0x03, INDX)/n
+                        If (LEqual (CODS, 0x0B))/n
+                        {/n
+                            Store (0x05, INDX)/n
+                        }/n
+
+                        While (LLess (Local0, INDX))/n
+                        {/n
+                            If (LEqual (Local2, 0x03))/n
+                            {/n
+                                Store (DerefOf (Index (SACC, Local0)), Local3)/n
+                            }/n
+                            ElseIf (LEqual (Local2, 0x09))/n
+                            {/n
+                                Store (DerefOf (Index (SACH, Local0)), Local3)/n
+                            }/n
+                            Else/n
+                            {/n
+                                Store (DerefOf (Index (SACT, Local0)), Local3)/n
+                            }/n
+
+                            If (LEqual (Local3, Local1))/n
+                            {/n
+                                Increment (Local0)/n
+                                If (LEqual (Local0, INDX))/n
+                                {/n
+                                    Store (Zero, Local0)/n
+                                }/n
+
+                                Store (Local0, NXTD)/n
+                                Store (INDX, Local0)/n
+                            }/n
+                            Else/n
+                            {/n
+                                Increment (Local0)/n
+                            }/n
+                        }/n
+
+                        If (LEqual (NXTD, INDX))/n
+                        {/n
+                            Store (Zero, SLDS)/n
+                        }/n
+                        Else/n
+                        {/n
+                            Store (NXTD, Local0)/n
+                            If (LEqual (Local2, 0x03))/n
+                            {/n
+                                Store (DerefOf (Index (SACC, Local0)), Local3)/n
+                            }/n
+                            ElseIf (LEqual (Local2, 0x09))/n
+                            {/n
+                                Store (DerefOf (Index (SACH, Local0)), Local3)/n
+                            }/n
+                            Else/n
+                            {/n
+                                Store (DerefOf (Index (SACT, Local0)), Local3)/n
+                            }/n
+
+                            Store (Local3, SLDS)/n
+                        }/n
+
+                        Store (0x04, F3SS)/n
+                        Store (SLDS, F3SD)/n
+                        Return (TMP3)/n
+                    }/n
+
+                    Return (Zero)/n
+                }/n
+
+                Method (AFN0, 0, Serialized)/n
+                {/n
+                    Store (One, DSWR)/n
+                    Notify (GFX0, 0x81)/n
+                }/n
+
+                Name (_PRW, Package (0x02)  // _PRW: Power Resources for Wake/n
+                {/n
+                    0x09, /n
+                    0x04/n
+                })/n
+            }/n
+        }/n
+        end;
