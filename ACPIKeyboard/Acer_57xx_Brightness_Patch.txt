@@ -7,6 +7,8 @@
 
 # created by Olderst
 
+# Suported models: Acer 47xx/57xx/77xx-series
+
 # works with:
 #  ELAN
 #  Synaptic
