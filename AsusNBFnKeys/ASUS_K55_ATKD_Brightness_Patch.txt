@@ -8,7 +8,7 @@
 # (AddPNLF in Clover or added PNLF device into DSDT)
 
 # Supported models: ASUS K53/K54/K55-series
-                    ASUS K55x/X55x-series
+                    ASUS K55x/X50x/X55x-series
 # works with:
 #  ELAN
 #  Synaptic (?)
