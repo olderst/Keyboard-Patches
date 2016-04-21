@@ -5,7 +5,7 @@
 # created by Olderst
 
 #Supported models: ASUS K43/K53/K54/K55-series
-                   ASUS K55x/X55x-series
+                   ASUS K55x/X50x/X55x-series
 
 # works with:
 #  ELAN
