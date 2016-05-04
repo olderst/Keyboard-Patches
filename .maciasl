@@ -5,8 +5,8 @@
 [acpi] ASUS K75 Volume Patch	ACPIKeyboard/ASUS_K75_Volume_Patch.txt
 [acpi] Acer Aspire E5-573G\Sony VAIO Brightness Patch	ACPIKeyboard/Acer_Aspire_E5_573G_Brightness_Patch.txt
 [acpi] Acer 47xx/57xx/77xx Brightness Patch	ACPIKeyboard/Acer_57xx_Brightness_Patch.txt
-[acpi] Lenovo Brightness Patch	ACPIKeyboard/Lenovo_Brightness_Patch.txt
 [acpi] HP 650 Brightness Patch  ACPIKeyboard/HP_650_Brightness_Patch.txt
+[acpi] Lenovo Brightness Patch	ACPIKeyboard/Lenovo_Brightness_Patch.txt
 [acpi] Enable ACPIKeyboard	ACPIKeyboard/Add_RMKB0000.txt
 [acpi] Samsung RV520 Brightness Patch	ACPIKeyboard/Samsung_RV520_Brightness_Patch.txt
 [FnKeys] --> AsusNBFnKeys	NullPatch.txt
