@@ -11,6 +11,7 @@
 [acpi] Lenovo Brightness Patch	ACPIKeyboard/Lenovo_Brightness_Patch.txt
 [acpi] Lenovo IdeaPad N5xx Brightness Patch	ACPIKeyboard/Lenovo_IdeaPad_N580_Brightness_Patch.txt
 [acpi] Lenovo ThinkPad E5xx Brightness Patch	ACPIKeyboard/Lenovo_ThinkPad_E540_Brightness_Patch.txt
+[acpi] Lenovo b5400 Brightness Patch	ACPIKeyboard/Lenovo_b5400_Brightness_Patch.txt
 [acpi] Enable ACPIKeyboard	ACPIKeyboard/Add_RMKB0000.txt
 [acpi] Samsung RV520 Brightness Patch	ACPIKeyboard/Samsung_RV520_Brightness_Patch.txt
 [FnKeys] --> AsusNBFnKeys	NullPatch.txt
