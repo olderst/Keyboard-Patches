@@ -21,6 +21,6 @@
 [igpu] --> Intel Grphics Patches	NullPatch.txt
 [igpu] Rename VGA to IGPU	VGA_to_IGPU.txt
 [PEGP] --> Enable Brightness Control	NullPatch.txt
-[PEGP] Rename RP00 to PEGP	RP00_to_PEGP.txt
+[PEGP] Rename RP00 to PEG0	RP00_to_PEG0.txt
 [PEGP] System Brightness Fix	Add_PNLF_For_DG.txt
 [DSDT] Add DTGP 	AddDTGP.txt
