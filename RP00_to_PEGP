@@ -1,0 +1,18 @@
+#Maintained by: Olderst for: Keyboard Patches
+#graphics_Rename-RP00.txt
+
+# Note: Some DSDT/SSDTs use RP00 for the discrete graphics device, like Pegatron Laptops,
+
+# rename RP00 -> PEGP for better power management
+into_all all code_regex RP00\. replaceall_matched begin PEGP. end;
+into_all all code_regex \.RP00 replaceall_matched begin .PEGP end;
+into_all all code_regex \RP00, replaceall_matched begin PEGP, end;
+into_all all code_regex \(RP00 replaceall_matched begin (PEGP end;
+into_all all label RP00 set_label begin PEGP end;
+into_all all label _SB.PCI0.RP00 set_label begin _SB.PCI0.PEGP end;
+into_all all label \_SB.PCI0.RP00 set_label begin \_SB.PCI0.PEGP end;
+into_all all label _SB.PCI0.RP00.RP00 set_label begin _SB.PCI0.PEGP.PEGP end;
+into_all all label \_SB.PCI0.RP00.RP00 set_label begin \_SB.PCI0.PEGP.PEGP end;
+into_all all label ^^^RP00 set_label begin ^^^PEGP end;
+into_all all label ^^RP00 set_label begin ^^PEGP end;
+into_all all label ^RP00 set_label begin ^PEGP end;
