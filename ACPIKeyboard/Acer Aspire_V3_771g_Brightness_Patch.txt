@@ -25,4 +25,4 @@ begin
 // Brightness Up\n
 Notify(\RMKB, 0x2171)\n
 Notify(\RMKB, 0x2271)\n
-end;
+end; 
